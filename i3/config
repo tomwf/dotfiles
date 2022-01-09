@@ -237,13 +237,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available). Commented out due to use of polybar. If you want to
 # use i3 bars (status or blocks) this are some examples on how you can do it.
-# bar {
-        #status_command i3status
-        #tray_output primary
-        #status_command i3status -c ~/.config/i3/i3status.conf
-        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#bar {
+#       status_command i3status
+#       tray_output primary
+#       status_command i3status -c ~/.config/i3status/config
+#       #status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #}
-
 
 # Launch a program on a certain workspace, from rofi (which may or may not have a keybinding)
 # for_window [class="nameofapp"] move to workspace $wsno.
@@ -255,7 +254,7 @@ for_window [class="firefox"] move to workspace $ws2
 # defined keybinding, on a certain workspace, without
 # touching program launcher. Assign Programs to respective
 # workspaces.
-bindsym $mod+b workspace 2; exec firefox
+bindsym $mod+b workspace $ws2; exec firefox
 
 
 #Multi Monitor (Dual Monitor, extended monitor)
@@ -268,3 +267,15 @@ exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
 
 #Apply new keymap on startup
 exec_always xmodmap ~/.Xmodmap
+
+#Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #073642 #073642 #eee8d5 #586e75   #073642
+client.focused_inactive #93A1A1 #93A1A1 #eee8d5 #586e75   #5f676a
+client.unfocused        #002b36 #002b36 #93a1a1 #586e75   #222222
+client.urgent           #DC322F #DC322F #eee8d5 #586e75   #DC322F
+client.placeholder      #DC322F #DC322F #eee8d5 #586e75   #DC322F
+
+client.background       #eee8d5
+
+
