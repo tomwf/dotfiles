@@ -147,7 +147,7 @@ bindsym $mod+f fullscreen toggle
 # 6] change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+e layout toggle split
 
 # 7] toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -274,8 +274,9 @@ client.focused          #073642 #073642 #eee8d5 #586e75   #073642
 client.focused_inactive #93A1A1 #93A1A1 #eee8d5 #586e75   #5f676a
 client.unfocused        #002b36 #002b36 #93a1a1 #586e75   #222222
 client.urgent           #DC322F #DC322F #eee8d5 #586e75   #DC322F
-client.placeholder      #DC322F #DC322F #eee8d5 #586e75   #DC322F
+client.placeholder      #002b36 #002b36 #eee8d5 #586e75   #002b36
 
 client.background       #eee8d5
 
-
+#Open file manager
+bindsym $mod+e exec nautilus
