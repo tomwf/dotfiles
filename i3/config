@@ -51,7 +51,8 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Display Wallpaper, always.
-exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
+#exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
+exec_always feh --bg-fill --randomize ~/.wallpaper/*
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 10
