@@ -24,7 +24,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10 
+font pango:monospace 10
 
 # start a terminal. We use kitty.
 bindsym $mod+Return exec alacritty
@@ -103,8 +103,16 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 ##Brightness Control in ALG i3
-bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+#Play / pause media
+bindsym XF86AudioPlay exec ~/.playerctl
+bindsym XF86AudioPause exec ~/.playerctl
+
+#Next / previous media
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -164,8 +172,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 1
-set $ws2 2
+set $ws1 1:  
+set $ws2 2: 
 set $ws3 3
 set $ws4 4
 set $ws5 5
@@ -173,7 +181,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws10 10
+set $ws10 10: 
 
 # 10] switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -245,6 +253,7 @@ bindsym $mod+r mode "resize"
 #       #status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #}
 bar {
+    font pango:Hack Nerd Font 10
     position top
     status_command ~/.config/bumblebee-status/bumblebee-status \
         -t solarized-powerline \
@@ -291,3 +300,6 @@ client.background       #eee8d5
 
 #Open file manager
 bindsym $mod+e exec nautilus
+
+#Open Apple music in workspace 10
+for_window [class="apple-music-for-linux"] move to workspace $ws10; workspace $ws10
