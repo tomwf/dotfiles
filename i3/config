@@ -48,7 +48,7 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
 
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Display Wallpaper, always.
 exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
@@ -243,6 +243,16 @@ bindsym $mod+r mode "resize"
 #       status_command i3status -c ~/.config/i3status/config
 #       #status_command i3blocks -c ~/.config/i3/i3blocks.conf
 #}
+bar {
+    position top
+    status_command ~/.config/bumblebee-status/bumblebee-status \
+        -t solarized-powerline \
+        -m amixer memory cpu battery-upower datetime \
+        -p \
+            datetime.format='%H:%M:%S %d/%m/%Y' \
+            cpu.format='{:.0f}%' \
+            memory.format='{percent:.0f}%'
+}
 
 # Launch a program on a certain workspace, from rofi (which may or may not have a keybinding)
 # for_window [class="nameofapp"] move to workspace $wsno.
