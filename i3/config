@@ -106,11 +106,8 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-#Play / pause media
-bindsym XF86AudioPlay exec ~/.playerctl
-bindsym XF86AudioPause exec ~/.playerctl
-
-#Next / previous media
+#Media Control
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -257,11 +254,13 @@ bar {
     position top
     status_command ~/.config/bumblebee-status/bumblebee-status \
         -t solarized-powerline \
-        -m amixer memory cpu battery-upower datetime \
+        -m playerctl amixer memory cpu battery-upower datetime \
         -p \
             datetime.format='%H:%M:%S %d/%m/%Y' \
             cpu.format='{:.0f}%' \
-            memory.format='{percent:.0f}%'
+            memory.format='{percent:.0f}%' \
+            playerctl.format='{{title}} - {{artist}}' \
+            playerctl.layout='playerctl.song'
 }
 
 # Launch a program on a certain workspace, from rofi (which may or may not have a keybinding)
