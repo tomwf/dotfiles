@@ -159,7 +159,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+Shift+space floating toggle
 
 # 8] change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # 9A] focus the parent container
 bindsym $mod+a focus parent
@@ -302,3 +302,6 @@ bindsym $mod+e exec nautilus
 
 #Open Apple music in workspace 10
 for_window [class="apple-music-for-linux"] move to workspace $ws10; workspace $ws10
+
+#Keyboard layout
+exec --no-startup-id fcitx -d
