@@ -24,7 +24,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans 10
+font pango:DejaVu Sans 0
 
 # start a terminal. We use kitty.
 bindsym $mod+Return exec alacritty
@@ -152,7 +152,8 @@ bindsym $mod+f fullscreen toggle
 
 # 6] change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+#bindsym $mod+t layout tabbed
+bindsym $mod+t layout toggle split
 #bindsym $mod+e layout toggle split
 
 # 7] toggle tiling / floating
@@ -173,12 +174,12 @@ set $ws1 1: 
 set $ws2 2: 
 set $ws3 3
 set $ws4 4
-set $ws5 5
+set $ws5 5: 
 set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
-set $ws10 10: 
+set $ws10 10
 
 # 10] switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -301,7 +302,7 @@ client.background       #eee8d5
 bindsym $mod+e exec nautilus
 
 #Open Apple music in workspace 10
-for_window [class="apple-music-for-linux"] move to workspace $ws10; workspace $ws10
+for_window [class="apple-music-for-linux"] move to workspace $ws5; workspace $ws5
 
 #Keyboard layout
 exec --no-startup-id fcitx -d
