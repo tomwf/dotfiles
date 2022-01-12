@@ -44,16 +44,16 @@ let g:user_emmet_settings = {
 let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Keymaps
-nmap <leader>e <Cmd>CocCommand explorer<CR>|  " Coc Explorer
-nmap <leader>bd <Cmd>bufdo bd <bar> b#<CR>|   " Close all buffers except the current one
-nmap <leader>g <Cmd>vertical Git<CR>|         " Git
-nmap <leader>fo <Cmd>Files<CR>|               " Fuzzy find file
-nmap <leader>ff <Cmd>Ag<CR>|                  " Fuzzy find text
-nmap <C-m> <Cmd>b#<CR>|                       " Ctrl-m => Toggle between current and previous buffers
-nmap <C-j> i<CR><Esc>|                        " New line at cursor
-map! <C-c> <Esc>|                             " Ctrl-c => Escape in Insert and Command-line Modes
-map <C-c> <Esc>|                              " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
-nmap Y y$|                                    " Yank to end of line
-        
+nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|  " Git
+nmap <leader>e <Cmd>CocCommand explorer<CR>|          " Coc Explorer
+nmap <leader>bd <Cmd>%bd<bar>b#<CR>|                  " Close all buffers except the current one
+nmap <leader>fo <Cmd>Files<CR>|                       " Fuzzy find file
+nmap <leader>ff <Cmd>Ag<CR>|                          " Fuzzy find text
+nmap <C-m> <Cmd>b#<CR>|                               " Ctrl-m => Toggle between current and previous buffers
+nmap <C-j> i<CR><Esc>|                                " New line at cursor
+map! <C-c> <Esc>|                                     " Ctrl-c => Escape in Insert and Command-line Modes
+map <C-c> <Esc>|                                      " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap Y y$|                                            " Yank to end of line
+
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
