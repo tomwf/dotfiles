@@ -28,6 +28,7 @@ call plug#end()
 " Beautiful text colors
 syntax on
 colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
 
 " Leader key
 let g:mapleader = ' '
