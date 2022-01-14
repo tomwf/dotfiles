@@ -27,7 +27,7 @@ set $mod Mod4
 font pango:DejaVu Sans 0
 
 # start a terminal. We use kitty.
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
