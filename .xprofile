@@ -1,0 +1,7 @@
+#Enable input method globally
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+#Make xmodmap persist globally
+xmodmap ~/.Xmodmap
