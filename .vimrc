@@ -8,26 +8,51 @@ set hidden                            " Open other buffers without saving curren
 
 " Amazing Plugins
 call plug#begin('~/.vim/plugged')
-"" Awesome Git
-Plug 'tpope/vim-fugitive'
-"" Fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 "" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"" Emmet
-Plug 'mattn/emmet-vim'
-"" Make jsx prettry
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+"" Awesome git wrapper
+Plug 'tpope/vim-fugitive'
+"" Awesome surround
+Plug 'tpope/vim-surround'
+"" Awesome comment
+Plug 'tpope/vim-commentary'
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" Fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"" Emmet
+Plug 'mattn/emmet-vim'
+
+" Frontend Frameworks
+"" REACT
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+"" VUE
+Plug 'leafOfTree/vim-vue-plugin'
+"" SVELTE
+Plug 'leafOfTree/vim-svelte-plugin'
+
+" Backend Frameworks
+"" PHP syntax
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+"" Pretty PHP
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
+Plug '2072/PHP-Indenting-for-VIm'
+
+" Wakatime
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 " Beautiful text colors
 syntax on
 colorscheme onedark
+"" iTerm2 transparent background
+highlight Normal ctermbg=None
+highlight LineNr ctermfg=DarkGrey
 
 " Leader key
 let g:mapleader = ' '
@@ -44,15 +69,19 @@ let g:user_emmet_settings = {
 let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Keymaps
-nmap <leader>e <Cmd>CocCommand explorer<CR>|  " Coc Explorer
-nmap <leader>bd <Cmd>bufdo bd <bar> b#<CR>|   " Close all buffers except the current one
-nmap <leader>g <Cmd>vertical Git<CR>|         " Git
-nmap <leader>fo <Cmd>Files<CR>|               " Fuzzy find file
-nmap <leader>ff <Cmd>Ag<CR>|                  " Fuzzy find text
-nmap <C-m> <Cmd>b#<CR>|                       " Ctrl-m => Toggle between current and previous buffers
-map! <C-c> <Esc>|                             " Ctrl-c => Escape in Insert and Command-line Modes
-map <C-c> <Esc>|                              " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
-nmap Y y$|                                    " Yank to end of line
-        
+nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|  " Git
+nmap <leader>e <Cmd>CocCommand explorer<CR>|          " Coc Explorer
+nmap <leader>bd <Cmd>%bd<bar>b#<CR>|                  " Close all buffers except the current one
+nmap <leader>fo <Cmd>Files<CR>|                       " Fuzzy find file
+nmap <leader>ff <Cmd>Ag<CR>|                          " Fuzzy find text
+nmap <CR> <Cmd>b#<CR>|                                " Toggle last buffer with Enter key
+nmap <C-j> i<CR><Esc>|                                " New line at cursor
+map! <C-c> <Esc>|                                     " Ctrl-c => Escape in Insert and Command-line Modes
+map <C-c> <Esc>|                                      " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap Y y$|                                            " Yank to end of line
+
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
+
+" Enable Vue plugin
+let g:vim_vue_plugin_load_full_syntax = 1
