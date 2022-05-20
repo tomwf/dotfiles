@@ -8,6 +8,8 @@ set hidden                            " Open other buffers without saving curren
 
 " Amazing Plugins
 call plug#begin('~/.vim/plugged')
+"" One Dark
+Plug 'joshdick/onedark.vim'
 "" Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
