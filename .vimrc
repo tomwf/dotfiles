@@ -6,28 +6,29 @@ set cursorline                        " Highlight cursor line
 set incsearch                         " Highlight search result
 set hidden                            " Open other buffers without saving current one
 
+
 " Amazing Plugins
 call plug#begin('~/.vim/plugged')
-"" One Dark
+"" Syntax Highlight
 Plug 'joshdick/onedark.vim'
-"" Airline
+"" Beautiful Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"" Awesome git wrapper
+"" Superpowers
 Plug 'tpope/vim-fugitive'
-"" Awesome surround
 Plug 'tpope/vim-surround'
-"" Awesome comment
 Plug 'tpope/vim-commentary'
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"" Fzf
+"" Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"" Emmet
-Plug 'mattn/emmet-vim'
+"" Time Tracking
+Plug 'wakatime/vim-wakatime'
 
 " Frontend Frameworks
+"" HTML
+Plug 'mattn/emmet-vim'
 "" REACT
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -44,15 +45,12 @@ Plug 'stephpy/vim-php-cs-fixer'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
 Plug '2072/PHP-Indenting-for-VIm'
 
-" Wakatime
-Plug 'wakatime/vim-wakatime'
-
 call plug#end()
 
-" Beautiful text colors
+" Enable Syntax Highlight
 syntax on
 colorscheme onedark
-"" iTerm2 transparent background
+" iTerm2 Transparent Background
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
@@ -73,9 +71,11 @@ let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 " Keymaps
 nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|  " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|          " Coc Explorer
-nmap <leader>bd <Cmd>%bd<bar>b#<CR>|                  " Close all buffers except the current one
 nmap <leader>fo <Cmd>Files<CR>|                       " Fuzzy find file
 nmap <leader>ff <Cmd>Ag<CR>|                          " Fuzzy find text
+nmap <leader>bd <Cmd>bd<CR>|                          " Delete buffer
+nmap <leader>bn <Cmd>bn<CR>|                          " Next buffer
+nmap <leader>bp <Cmd>bp<CR>|                          " Previous buffer
 nmap <CR> <Cmd>b#<CR>|                                " Toggle last buffer with Enter key
 nmap <C-j> i<CR><Esc>|                                " New line at cursor
 map! <C-c> <Esc>|                                     " Ctrl-c => Escape in Insert and Command-line Modes
