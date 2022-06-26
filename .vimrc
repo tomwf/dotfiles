@@ -73,9 +73,9 @@ nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|  " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|          " Coc Explorer
 nmap <leader>fo <Cmd>Files<CR>|                       " Fuzzy find file
 nmap <leader>ff <Cmd>Ag<CR>|                          " Fuzzy find text
-nmap <leader>bd <Cmd>bd<CR>|                          " Delete buffer
-nmap <leader>bn <Cmd>bn<CR>|                          " Next buffer
-nmap <leader>bp <Cmd>bp<CR>|                          " Previous buffer
+nmap <C-k> <Cmd>bd<bar>bp<CR>|                        " Delete buffer
+nmap <C-l> <Cmd>bn<CR>|                               " Next buffer
+nmap <C-h> <Cmd>bp<CR>|                               " Previous buffer
 nmap <CR> <Cmd>b#<CR>|                                " Toggle last buffer with Enter key
 nmap <C-j> i<CR><Esc>|                                " New line at cursor
 map! <C-c> <Esc>|                                     " Ctrl-c => Escape in Insert and Command-line Modes
