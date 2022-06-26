@@ -45,6 +45,9 @@ Plug 'stephpy/vim-php-cs-fixer'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
 Plug '2072/PHP-Indenting-for-VIm'
 
+" Kitty syntax highlighting
+Plug 'fladson/vim-kitty'
+
 call plug#end()
 
 " Enable Syntax Highlight
