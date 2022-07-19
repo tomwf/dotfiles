@@ -4,12 +4,10 @@ set colorcolumn=80                    " Highlight 80th column
 set nocompatible                      " be iMproved, required
 set ignorecase                        " Ignore case when searching
 set cursorline                        " Highlight cursor line
-set incsearch                         " Highlight search result
 set hidden                            " Open other buffers without saving current one
 set completeopt=menu,menuone,noselect
 
 
-" Amazing Plugins
 call plug#begin('~/.vim/plugged')
 
 "" Syntax Highlight
@@ -30,25 +28,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "" Time Tracking
 Plug 'wakatime/vim-wakatime'
 
-" Frontend Frameworks
-"" HTML
+"" Emmet
 Plug 'mattn/emmet-vim'
-"" REACT
-" Plug 'yuezk/vim-js'
-" Plug 'maxmellon/vim-jsx-pretty'
-"" VUE
-" Plug 'leafOfTree/vim-vue-plugin'
-"" SVELTE
-"Plug 'leafOfTree/vim-svelte-plugin'
-
-" Backend Frameworks
-"" PHP syntax
-" Plug 'StanAngeloff/php.vim'
-" Plug 'stephpy/vim-php-cs-fixer'
-
-"" Pretty PHP
-" Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
-" Plug '2072/PHP-Indenting-for-VIm'
 
 if has('nvim')
   " Tree sitter
@@ -97,27 +78,33 @@ let g:user_emmet_settings = {
 let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Keymaps
-nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|  " Git
-nmap <leader>fo <Cmd>Telescope find_files<CR>|        " Fuzzy find file
-nmap <leader>ff <Cmd>Telescope live_grep<CR>|         " Fuzzy find text
-nmap <leader>e <Cmd>CocCommand explorer<CR>|          " Coc Explorer
-nmap <C-k> <Cmd>bd<bar>bp<CR>|                        " Delete buffer
-nmap <C-l> <Cmd>bn<CR>|                               " Next buffer
-nmap <C-h> <Cmd>bp<CR>|                               " Previous buffer
-nmap <CR> <Cmd>b#<CR>|                                " Toggle last buffer with Enter key
-nmap <C-j> i<CR><Esc>|                                " New line at cursor
-map! <C-c> <Esc>|                                     " Ctrl-c => Escape in Insert and Command-line Modes
-map <C-c> <Esc>|                                      " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
-nmap Y y$|                                            " Yank to end of line
+nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|      " Git
+nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
+nmap <C-k> <Cmd>bd<bar>bp<CR>|                            " Delete buffer
+nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
+nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
+nmap <CR> <Cmd>b#<CR>|                                    " Toggle last buffer with Enter key
+nmap <C-j> i<CR><Esc>|                                    " New line at cursor
+map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
+map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap Y y$|                                                " Yank to end of line
+
+" Telescope keymaps
+nmap <leader>fo <Cmd>Telescope find_files<CR>|            " Fuzzy find file
+nmap <leader>ff <Cmd>Telescope live_grep<CR>|             " Fuzzy find text
+
+" LSP keymaps
+nmap <leader>dj <Cmd>lua vim.diagnostic.goto_next()<CR>|  " Jump to next diagnostic line
+nmap <leader>dk <Cmd>lua vim.diagnostic.goto_prev()<CR>|  " Jump to previous diagnostic line
+nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>|         " Rename all references under cursor
+nmap gd <Cmd>lua vim.lsp.buf.definition()<CR>|            " Go to definition
+nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                  " Show definition
 
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
 
-" Enable Vue plugin
-let g:vim_vue_plugin_load_full_syntax = 1
-
 lua << EOF
-require('lspconfig').tsserver.setup{
+require'lspconfig'.tsserver.setup{
 on_attach = function()
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {buffer=0})
@@ -192,19 +179,23 @@ cmp.setup.filetype('gitcommit', {
   })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['tsserver'].setup {
+require'lspconfig'['tsserver'].setup {
   capabilities = capabilities
   }
 EOF
 
 lua <<EOF
-require('nvim-treesitter.configs').setup {
+require'nvim-treesitter.configs'.setup {
   ensure_installed = { "css",  "html", "javascript", "json", "markdown", "php", "python", "scss", "svelte", "todotxt", "tsx", "typescript", "vim", "vue" },
   auto_install = true,
   highlight = {
     enable = true
   }
 }
+EOF
+
+lua <<EOF
+require'lspconfig'.intelephense.setup{}
 EOF
