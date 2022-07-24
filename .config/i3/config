@@ -181,7 +181,7 @@ bar {
             focused_workspace  #E38D4F #E38D4F #ffffff
             active_workspace   #E38D4F #E38D4F #ffffff
             inactive_workspace #9C4624 #9C4624 #E6E6E1
-            urgent_workspace   #ffffff #ffffff #9E3831
+            urgent_workspace   #FF0000 #FF0000 #ffffff
         }
 }
 
@@ -196,7 +196,7 @@ default_border pixel 1
 client.focused          #9C4624 #285577 #ffffff #E38D4F   #9C4624
 client.focused_inactive #3D1D13 #5f676a #ffffff #3D1D13   #3D1D13
 client.unfocused        #3D1D13 #222222 #888888 #3D1D13   #3D1D13
-client.urgent           #9E3831 #900000 #ffffff #900000   #9E3831
-client.placeholder      #9E3831 #0c0c0c #ffffff #000000   #9E3831
+client.urgent           #FF0000 #900000 #ffffff #900000   #FF0000
+client.placeholder      #3D1D13 #222222 #888888 #3D1D13   #3D1D13
 
 client.background       #ffffff
