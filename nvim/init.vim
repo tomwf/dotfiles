@@ -212,3 +212,7 @@ require'telescope'.setup {
   }
 }
 EOF
+
+lua <<EOF
+require'lspconfig'.pylsp.setup{}
+EOF
