@@ -12,7 +12,12 @@ case $TARGET_LANGUAGE in
 esac
 
 open_google_translate() {
-  firefox "https://translate.google.com/?sl=$SOURCE_LANGUAGE&tl=$TARGET_LANGUAGE&text=$TEXT"
+  case $OSTYPE in
+    linux*) firefox "https://translate.google.com/?sl=$SOURCE_LANGUAGE&tl=$TARGET_LANGUAGE&text=$TEXT"
+      ;;
+    darwin*) open /Applications/Firefox.app "https://translate.google.com/?sl=$SOURCE_LANGUAGE&tl=$TARGET_LANGUAGE&text=$TEXT"
+      ;;
+  esac
 }
 
 open_google_translate
