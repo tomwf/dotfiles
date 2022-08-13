@@ -206,7 +206,8 @@ require'telescope'.setup {
     mappings = {
       i = {
         ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous
+        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+        ["<C-f>"] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist
       }
     }
   }
