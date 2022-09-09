@@ -5,6 +5,7 @@ set nocompatible                      " be iMproved, required
 set ignorecase                        " Ignore case when searching
 set cursorline                        " Highlight cursor line
 set hidden                            " Open other buffers without saving current one
+set smartindent                       " Autoindent in new line
 set completeopt=menu,menuone,noselect
 
 
@@ -78,7 +79,7 @@ let g:user_emmet_settings = {
 let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Keymaps
-nmap <leader>g <Cmd>vertical Git<bar>%bd<bar>b#<CR>|      " Git
+nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
 nmap <C-k> <Cmd>bd<bar>bp<CR>|                            " Delete buffer
 nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
@@ -99,6 +100,9 @@ nmap <leader>dk <Cmd>lua vim.diagnostic.goto_prev()<CR>|  " Jump to previous dia
 nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>|         " Rename all references under cursor
 nmap gd <Cmd>lua vim.lsp.buf.definition()<CR>|            " Go to definition
 nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                  " Show definition
+
+" Code formatting
+nmap =G <Cmd>lua vim.lsp.buf.formatting()<CR>             " Indent buffer
 
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
@@ -192,12 +196,8 @@ require'nvim-treesitter.configs'.setup {
   auto_install = true,
   highlight = {
     enable = true
+    }
   }
-}
-EOF
-
-lua <<EOF
-require'lspconfig'.intelephense.setup{}
 EOF
 
 lua <<EOF
@@ -206,13 +206,10 @@ require'telescope'.setup {
     mappings = {
       i = {
         ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous
+        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+        ["<C-f>"] = require('telescope.actions').send_selected_to_qflist + require('telescope.actions').open_qflist
+        }
       }
     }
   }
-}
-EOF
-
-lua <<EOF
-require'lspconfig'.pylsp.setup{}
 EOF

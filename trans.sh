@@ -5,10 +5,20 @@ TEXT=${@:3}
 
 case $SOURCE_LANGUAGE in
   cn) SOURCE_LANGUAGE="zh-CN"
+    ;;
+  zh) SOURCE_LANGUAGE="zh-CN"
+    ;;
+  jp) SOURCE_LANGUAGE="ja"
+    ;;
 esac
 
 case $TARGET_LANGUAGE in
   cn) TARGET_LANGUAGE="zh-CN"
+    ;;
+  zh) TARGET_LANGUAGE="zh-CN"
+    ;;
+  jp) TARGET_LANGUAGE="ja"
+    ;;
 esac
 
 open_google_translate() {
