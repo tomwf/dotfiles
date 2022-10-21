@@ -219,3 +219,7 @@ lua <<EOF
 require'lspconfig'.clangd.setup{}
 EOF
 
+lua <<EOF
+require'lspconfig'.html.setup{}
+EOF
+
