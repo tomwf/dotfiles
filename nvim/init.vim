@@ -88,6 +88,7 @@ nmap <CR> <Cmd>b#<CR>|                                    " Toggle last buffer w
 nmap <C-j> i<CR><Esc>|                                    " New line at cursor
 map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap =G =Gzz|                                             " Indent until end of file
 nmap Y y$|                                                " Yank to end of line
 
 " Telescope keymaps
