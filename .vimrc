@@ -38,14 +38,6 @@ Plug 'leafOfTree/vim-vue-plugin'
 "" SVELTE
 Plug 'leafOfTree/vim-svelte-plugin'
 
-" Backend Frameworks
-"" PHP syntax
-Plug 'StanAngeloff/php.vim'
-Plug 'stephpy/vim-php-cs-fixer'
-"" Pretty PHP
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
-Plug '2072/PHP-Indenting-for-VIm'
-
 " Kitty syntax highlighting
 Plug 'fladson/vim-kitty'
 
