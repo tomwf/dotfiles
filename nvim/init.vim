@@ -52,9 +52,6 @@ if has('nvim')
 
 endif
 
-" Kitty syntax highlighting
-Plug 'fladson/vim-kitty'
-
 call plug#end()
 
 " Enable Syntax Highlight
