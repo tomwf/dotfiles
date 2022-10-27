@@ -38,9 +38,6 @@ Plug 'leafOfTree/vim-vue-plugin'
 "" SVELTE
 Plug 'leafOfTree/vim-svelte-plugin'
 
-" Kitty syntax highlighting
-Plug 'fladson/vim-kitty'
-
 call plug#end()
 
 " Enable Syntax Highlight
