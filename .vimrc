@@ -7,23 +7,27 @@ set cursorline                        " Highlight cursor line
 set incsearch                         " Highlight search result
 set hidden                            " Open other buffers without saving current one
 
-
-" Amazing Plugins
 call plug#begin('~/.vim/plugged')
+
 "" Syntax Highlight
 Plug 'joshdick/onedark.vim'
+
 "" Beautiful Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 "" Superpowers
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "" Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 "" Time Tracking
 Plug 'wakatime/vim-wakatime'
 
