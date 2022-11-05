@@ -13,43 +13,36 @@ call plug#begin('~/.vim/plugged')
 
 "" Syntax Highlight
 Plug 'joshdick/onedark.vim'
-
 "" Beautiful Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 "" Superpowers
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+"" Painless html
+Plug 'mattn/emmet-vim'
+"" Format code
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 "" Time Tracking
 Plug 'wakatime/vim-wakatime'
-
-"" Emmet
-Plug 'mattn/emmet-vim'
 
 if has('nvim')
   " Tree sitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
   " LSP
   Plug 'neovim/nvim-lspconfig'
-
   " Auto-complete engine
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'saadparwaiz1/cmp_luasnip'
-
   " Telescope
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-
 endif
 
 call plug#end()
@@ -57,12 +50,16 @@ call plug#end()
 " Enable Syntax Highlight
 syntax on
 colorscheme onedark
+
 " iTerm2 Transparent Background
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
 " Leader key
 let g:mapleader = ' '
+
+" Airline settings
+let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Emmet settings
 let g:user_emmet_leader_key = 'ù'  " Redefine Emmet trigger key
@@ -72,8 +69,9 @@ let g:user_emmet_settings = {
       \  },
       \}
 
-" Airline settings
-let g:airline#extensions#tabline#enabled = 1  " Enable tabline
+" Enable auto format on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " Keymaps
 nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
