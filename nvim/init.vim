@@ -17,9 +17,12 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "" Superpowers
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+"" Git magic
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'APZelos/blamer.nvim'
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "" Painless html
@@ -76,6 +79,7 @@ let g:prettier#autoformat_require_pragma = 0
 " Keymaps
 nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
+nmap <leader>b <Cmd>BlamerToggle<CR>|                     " Toggle blamer
 nmap <C-k> <Cmd>bd<bar>bp<CR>|                            " Delete buffer
 nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
 nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
