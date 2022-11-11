@@ -27,7 +27,10 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock --i3lock --nofork
 
 # Random wallpapers
-exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
+# exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
+
+# Default wallpaper
+exec --no-startup-id feh --bg-fill ~/.wallpapers/raphtalia_1_1080p.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -115,9 +118,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
+set $feh exec --no-startup-id feh --bg-fill
+bindsym $mod+ampersand workspace number $ws1 ; $feh ~/.wallpapers/raphtalia_1_1080p.png
+bindsym $mod+eacute workspace number $ws2 ; $feh ~/.wallpapers/miku_1.jpg
+bindsym $mod+quotedbl workspace number $ws3 ; $feh ~/.wallpapers/hanabi_1.jpg
 bindsym $mod+apostrophe workspace number $ws4
 bindsym $mod+parenleft workspace number $ws5
 bindsym $mod+section workspace number $ws6
