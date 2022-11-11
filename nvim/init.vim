@@ -13,59 +13,56 @@ call plug#begin('~/.vim/plugged')
 
 "" Syntax Highlight
 Plug 'joshdick/onedark.vim'
-
 "" Beautiful Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 "" Superpowers
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-
+"" Git magic
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'APZelos/blamer.nvim'
 "" Coc is love
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+"" Painless html
+Plug 'mattn/emmet-vim'
+"" Format code
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 "" Time Tracking
 Plug 'wakatime/vim-wakatime'
-
-"" Emmet
-Plug 'mattn/emmet-vim'
 
 if has('nvim')
   " Tree sitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
   " LSP
   Plug 'neovim/nvim-lspconfig'
-
   " Auto-complete engine
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'saadparwaiz1/cmp_luasnip'
-
   " Telescope
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-
 endif
-
-" Kitty syntax highlighting
-Plug 'fladson/vim-kitty'
 
 call plug#end()
 
 " Enable Syntax Highlight
 syntax on
 colorscheme onedark
+
 " iTerm2 Transparent Background
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
 " Leader key
 let g:mapleader = ' '
+
+" Airline settings
+let g:airline#extensions#tabline#enabled = 1  " Enable tabline
 
 " Emmet settings
 let g:user_emmet_leader_key = 'ù'  " Redefine Emmet trigger key
@@ -75,12 +72,14 @@ let g:user_emmet_settings = {
       \  },
       \}
 
-" Airline settings
-let g:airline#extensions#tabline#enabled = 1  " Enable tabline
+" Enable auto format on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " Keymaps
 nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
+nmap <leader>b <Cmd>BlamerToggle<CR>|                     " Toggle blamer
 nmap <C-k> <Cmd>bd<bar>bp<CR>|                            " Delete buffer
 nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
 nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
@@ -88,6 +87,7 @@ nmap <CR> <Cmd>b#<CR>|                                    " Toggle last buffer w
 nmap <C-j> i<CR><Esc>|                                    " New line at cursor
 map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap =G =Gzz|                                             " Indent until end of file
 nmap Y y$|                                                " Yank to end of line
 
 " Telescope keymaps
@@ -102,7 +102,7 @@ nmap gd <Cmd>lua vim.lsp.buf.definition()<CR>|            " Go to definition
 nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                  " Show definition
 
 " Code formatting
-nmap =G <Cmd>lua vim.lsp.buf.formatting()<CR>             " Indent buffer
+nmap =g <Cmd>lua vim.lsp.buf.formatting()<CR>             " Indent buffer
 
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
@@ -183,7 +183,7 @@ cmp.setup.filetype('gitcommit', {
   })
 
 -- Setup lspconfig.
-local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require'cmp_nvim_lsp'.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require'lspconfig'['tsserver'].setup {
   capabilities = capabilities
@@ -213,3 +213,12 @@ require'telescope'.setup {
     }
   }
 EOF
+
+lua <<EOF
+require'lspconfig'.clangd.setup{}
+EOF
+
+lua <<EOF
+require'lspconfig'.html.setup{}
+EOF
+
