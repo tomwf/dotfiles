@@ -200,6 +200,9 @@ bindsym $mod+e exec i3lock -i ~/Pictures/wallpapers/lockscreen.png
 # Hide window title bar
 default_border pixel 1
 
+# Disable focus on mouse hover
+focus_follows_mouse no
+
 # Window border color
 # class                 border  backgr. text    indicator child_border
 client.focused          #9C4624 #285577 #ffffff #E38D4F   #9C4624
