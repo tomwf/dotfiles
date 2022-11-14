@@ -26,8 +26,8 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock --i3lock --nofork
 
-# Random wallpapers
-exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
+# Default wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/raphtalia_1_1080p.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -38,6 +38,9 @@ exec --no-startup-id picom
 
 # Run fcitx5
 exec --no-startup-id fcitx5 -d
+
+# Configure monitor
+exec --no-startup-id xrandr --output HDMI1 --primary --auto --above eDP1
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -115,10 +118,11 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
-bindsym $mod+apostrophe workspace number $ws4
+set $feh exec --no-startup-id feh --bg-fill
+bindsym $mod+ampersand workspace number $ws1 ; $feh ~/Pictures/wallpapers/raphtalia_1_1080p.png
+bindsym $mod+eacute workspace number $ws2 ; $feh ~/Pictures/wallpapers/miku_1.jpg
+bindsym $mod+quotedbl workspace number $ws3 ; $feh ~/Pictures/wallpapers/hanabi_1.jpg
+bindsym $mod+apostrophe workspace number $ws4 ; $feh ~/Pictures/wallpapers/sky_1.jpg
 bindsym $mod+parenleft workspace number $ws5
 bindsym $mod+section workspace number $ws6
 bindsym $mod+egrave workspace number $ws7
@@ -145,7 +149,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lock screen
-bindsym $mod+Shift+at exec i3lock -i .wallpapers/lockscreen.png
+bindsym $mod+Shift+at exec i3lock -i Pictures/wallpapers/lockscreen.png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -191,10 +195,13 @@ bar {
 }
 
 # Lock screen
-bindsym $mod+e exec i3lock -i ~/.wallpapers/lockscreen.png
+bindsym $mod+e exec i3lock -i ~/Pictures/wallpapers/lockscreen.png
 
 # Hide window title bar
 default_border pixel 1
+
+# Disable focus on mouse hover
+focus_follows_mouse no
 
 # Window border color
 # class                 border  backgr. text    indicator child_border
