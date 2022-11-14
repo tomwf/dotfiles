@@ -85,9 +85,13 @@ nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
 nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
 nmap <CR> <Cmd>b#<CR>|                                    " Toggle last buffer with Enter key
 nmap <C-j> i<CR><Esc>|                                    " New line at cursor
+nmap <C-f> <C-f>zz|                                       " Center cursor on page down
+nmap <C-b> <C-b>zz|                                       " Center cursor on page up
 map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
 nmap =G =Gzz|                                             " Indent until end of file
+nmap n nzz|                                               " Center cursor on next search result
+nmap N Nzz|                                               " Center cursor on previous search result
 nmap Y y$|                                                " Yank to end of line
 
 " Telescope keymaps
