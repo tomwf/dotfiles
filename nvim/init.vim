@@ -227,3 +227,6 @@ lua <<EOF
 require'lspconfig'.html.setup{}
 EOF
 
+lua <<EOF
+require'lspconfig'.bashls.setup{}
+EOF
