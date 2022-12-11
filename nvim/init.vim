@@ -199,7 +199,8 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = { "css",  "html", "javascript", "json", "markdown", "php", "python", "scss", "svelte", "todotxt", "tsx", "typescript", "vim", "vue" },
   auto_install = true,
   highlight = {
-    enable = true
+    enable = true,
+    indent = true
     }
   }
 EOF
