@@ -105,9 +105,6 @@ nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>|           " Rename all referen
 nmap gd <Cmd>lua vim.lsp.buf.definition()<CR>|              " Go to definition
 nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                    " Show definition
 
-" Code formatting
-nmap =g <Cmd>lua vim.lsp.buf.formatting()<CR>             " Indent buffer
-
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
 
