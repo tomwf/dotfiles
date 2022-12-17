@@ -3,6 +3,7 @@ set number relativenumber             " Show hybrid line number
 set colorcolumn=80                    " Highlight 80th column
 set nocompatible                      " be iMproved, required
 set ignorecase                        " Ignore case when searching
+set smartcase                         " Filter search for capital letters
 set cursorline                        " Highlight cursor line
 set hidden                            " Open other buffers without saving current one
 set smartindent                       " Autoindent in new line
