@@ -96,8 +96,10 @@ nmap N Nzz|                                               " Center cursor on pre
 nmap Y y$|                                                " Yank to end of line
 
 " Telescope keymaps
-nmap <leader>fo <Cmd>Telescope find_files<CR>|            " Fuzzy find file
-nmap <leader>ff <Cmd>Telescope live_grep<CR>|             " Fuzzy find text
+nnoremap <leader>fo <Cmd>Telescope find_files<CR>|                 " Fuzzy find file
+nnoremap <leader>ff <Cmd>Telescope live_grep<CR>|                  " Fuzzy find text
+nnoremap <leader>fb <Cmd>Telescope buffers<CR>|                    " Fuzzy find buffers
+nnoremap <leader>fh <Cmd>Telescope current_buffer_fuzzy_find<CR>|  " Fuzzy find in current buffer
 
 " LSP keymaps
 nmap <leader>dj <Cmd>lua vim.diagnostic.goto_next()<CR>zz|  " Jump to next diagnostic line
