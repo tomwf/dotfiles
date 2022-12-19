@@ -102,6 +102,7 @@ nmap <leader>ff <Cmd>Telescope live_grep<CR>|             " Fuzzy find text
 " LSP keymaps
 nmap <leader>dj <Cmd>lua vim.diagnostic.goto_next()<CR>zz|  " Jump to next diagnostic line
 nmap <leader>dk <Cmd>lua vim.diagnostic.goto_prev()<CR>zz|  " Jump to previous diagnostic line
+nmap <leader>gr <Cmd>lua vim.lsp.buf.references()<CR>|      " Show all references
 nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>|           " Rename all references under cursor
 nmap gd <Cmd>lua vim.lsp.buf.definition()<CR>|              " Go to definition
 nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                    " Show definition
