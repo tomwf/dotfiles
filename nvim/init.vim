@@ -111,6 +111,7 @@ nmap K <Cmd>lua vim.lsp.buf.hover()<CR>|                    " Show definition
 
 " Indentation for different file types
 autocmd BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 lua << EOF
 require'lspconfig'.tsserver.setup{
