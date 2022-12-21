@@ -8,6 +8,8 @@ set cursorline                        " Highlight cursor line
 set hidden                            " Open other buffers without saving current one
 set smartindent                       " Autoindent in new line
 set completeopt=menu,menuone,noselect
+set foldmethod=indent                  " Use indent as a fold
+set foldlevelstart=99                  " No folds closed
 
 
 call plug#begin('~/.vim/plugged')
