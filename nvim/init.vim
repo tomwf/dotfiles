@@ -234,3 +234,7 @@ EOF
 lua <<EOF
 require'lspconfig'.bashls.setup{}
 EOF
+
+lua <<EOF
+require'lspconfig'.graphql.setup{}
+EOF
