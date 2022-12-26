@@ -15,7 +15,7 @@ set foldlevelstart=99                  " No folds closed
 call plug#begin('~/.vim/plugged')
 
 "" Syntax Highlight
-Plug 'joshdick/onedark.vim'
+Plug 'navarasu/onedark.nvim'
 "" Beautiful Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -52,14 +52,6 @@ if has('nvim')
 endif
 
 call plug#end()
-
-" Enable Syntax Highlight
-syntax on
-colorscheme onedark
-
-" iTerm2 Transparent Background
-highlight Normal ctermbg=None
-highlight LineNr ctermfg=DarkGrey
 
 " Leader key
 let g:mapleader = ' '
@@ -237,4 +229,12 @@ EOF
 
 lua <<EOF
 require'lspconfig'.graphql.setup{}
+EOF
+
+lua <<EOF
+require('onedark').setup  {
+    style = 'cool',  -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = true,  -- Show/hide background
+}
+require('onedark').load()
 EOF
