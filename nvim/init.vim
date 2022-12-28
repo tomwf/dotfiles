@@ -72,30 +72,33 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 " Keymaps
+"" Git
 nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
-nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
 nmap <leader>b <Cmd>BlamerToggle<CR>|                     " Toggle blamer
 nmap <leader>d <Cmd>Gvdiff<CR>|                           " Git diff
+"" Buffer
 nmap <C-k> <Cmd>bn<bar>bd#<CR>|                           " Delete buffer
 nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
 nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
 nmap <CR> <Cmd>b#<CR>|                                    " Toggle last buffer with Enter key
+"" Coc explorer
+nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
+"" These should come by default
 nmap <C-j> i<CR><Esc>|                                    " New line at cursor
-nmap <C-f> <C-f>zz|                                       " Center cursor on page down
-nmap <C-b> <C-b>zz|                                       " Center cursor on page up
 map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
+nmap Y y$|                                                " Yank to end of line
+"" Center cursor
+nmap <C-f> <C-f>zz|                                       " Center cursor on page down
+nmap <C-b> <C-b>zz|                                       " Center cursor on page up
 nmap =G =Gzz|                                             " Indent until end of file
 nmap n nzz|                                               " Center cursor on next search result
 nmap N Nzz|                                               " Center cursor on previous search result
-nmap Y y$|                                                " Yank to end of line
-
-" Telescope keymaps
+"" Telescope keymaps
+nnoremap <leader>fh <Cmd>Telescope current_buffer_fuzzy_find<CR>|  " Fuzzy find in current buffer
 nnoremap <leader>fo <Cmd>Telescope find_files<CR>|                 " Fuzzy find file
 nnoremap <leader>ff <Cmd>Telescope live_grep<CR>|                  " Fuzzy find text
 nnoremap <leader>fb <Cmd>Telescope buffers<CR>|                    " Fuzzy find buffers
-nnoremap <leader>fh <Cmd>Telescope current_buffer_fuzzy_find<CR>|  " Fuzzy find in current buffer
-
 " LSP keymaps
 nmap <leader>dj <Cmd>lua vim.diagnostic.goto_next()<CR>zz|  " Jump to next diagnostic line
 nmap <leader>dk <Cmd>lua vim.diagnostic.goto_prev()<CR>zz|  " Jump to previous diagnostic line
