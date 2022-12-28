@@ -75,6 +75,7 @@ let g:prettier#autoformat_require_pragma = 0
 nmap <leader>g <Cmd>vertical Git<bar>%bd!<bar>b#<CR>|     " Git
 nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
 nmap <leader>b <Cmd>BlamerToggle<CR>|                     " Toggle blamer
+nmap <leader>d <Cmd>Gvdiff<CR>|                           " Git diff
 nmap <C-k> <Cmd>bn<bar>bd#<CR>|                           " Delete buffer
 nmap <C-l> <Cmd>bn<CR>|                                   " Next buffer
 nmap <C-h> <Cmd>bp<CR>|                                   " Previous buffer
