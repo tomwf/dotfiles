@@ -85,6 +85,8 @@ nmap <leader>e <Cmd>CocCommand explorer<CR>|              " Coc Explorer
 "" These should come by default
 nmap <C-j> i<CR><Esc>|                                    " New line at cursor
 map! <C-c> <Esc>|                                         " Ctrl-c => Escape in Insert and Command-line Modes
+map! <C-j> <Down>|                                        " Navigate down in Command Mode
+map! <C-k> <Up>|                                          " Navigate upp in Command Mode
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
 nmap Y y$|                                                " Yank to end of line
 "" Center cursor
