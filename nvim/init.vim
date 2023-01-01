@@ -1,13 +1,8 @@
 set shiftwidth=2 tabstop=2 expandtab   " Default indent with 2 spaces
 set number relativenumber              " Show hybrid line number
-set colorcolumn=80                     " Highlight 80th column
-set nocompatible                       " be iMproved, required
 set ignorecase                         " Ignore case when searching
 set smartcase                          " Filter search for capital letters
-set cursorline                         " Highlight cursor line
-set hidden                             " Open other buffers without saving current one
 set smartindent                        " Autoindent in new line
-set completeopt=menu,menuone,noselect  " Show completion
 set foldmethod=indent                  " Use indent as a fold
 set foldlevelstart=99                  " No folds closed
 
