@@ -36,6 +36,7 @@ if has('nvim')
   " LSP
   Plug 'neovim/nvim-lspconfig'
   " Auto-complete engine
+  Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
