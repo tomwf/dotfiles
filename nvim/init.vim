@@ -88,8 +88,8 @@ map! <C-c> <Esc>|                                         " Ctrl-c => Escape in 
 map <C-c> <Esc>|                                          " Ctrl-c => Escape in Normal, Visual, Select and Operator-pending Modes
 nmap Y y$|                                                " Yank to end of line
 "" Center cursor
-nmap <C-f> <C-f>zz|                                       " Center cursor on page down
-nmap <C-b> <C-b>zz|                                       " Center cursor on page up
+nmap <C-f> <C-f>M|                                        " Center cursor on page down
+nmap <C-b> <C-b>M|                                        " Center cursor on page up
 nmap =G =Gzz|                                             " Indent until end of file
 nmap n nzz|                                               " Center cursor on next search result
 nmap N Nzz|                                               " Center cursor on previous search result
