@@ -29,12 +29,17 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+-- Autocompletion for LSPs
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require('lspconfig').tsserver.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 }
 
 require('lspconfig').sumneko_lua.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -58,5 +63,6 @@ require('lspconfig').sumneko_lua.setup {
 }
 
 require('lspconfig').emmet_ls.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 }
