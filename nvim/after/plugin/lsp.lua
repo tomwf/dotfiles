@@ -1,68 +1,30 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
--- vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_next, opts)
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, opts)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  -- vim.keymap.set('n', '<leader>wl', function()
-  -- print(vim.inspect(vim.lsp.buf.list_workleader_folders()))
-  -- end, bufopts)
-  -- vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
-  -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
-end
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
 
--- Autocompletion for LSPs
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+lsp.set_preferences({
+  set_lsp_keymaps = false
+})
 
-require('lspconfig').tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+lsp.on_attach(function(client, bufnr)
+  local opts = {buffer = bufnr, remap = false}
+  local bind = vim.keymap.set
 
-require('lspconfig').sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
+  bind('n', 'gD', vim.lsp.buf.declaration, opts)
+  bind('n', 'gd', vim.lsp.buf.definition, opts)
+  bind('n', 'K', vim.lsp.buf.hover, opts)
+  bind('n', '<leader>z', vim.lsp.buf.type_definition, opts)
+  bind('n', '<leader>r', vim.lsp.buf.rename, opts)
+  bind('n', 'gr', vim.lsp.buf.references, opts)
+  bind('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, opts)
+end)
 
-require('lspconfig').emmet_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+-- Configure lua language server for neovim
+lsp.nvim_workspace()
+
+lsp.setup()
