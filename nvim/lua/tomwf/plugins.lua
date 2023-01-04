@@ -18,8 +18,6 @@ return require('packer').startup(function(use)
   use 'APZelos/blamer.nvim'
   -- Coc is love
   use { 'neoclide/coc.nvim', branch = 'release' }
-  -- Format code
-  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
   -- Time Tracking
   use 'wakatime/vim-wakatime'
   -- Tree sitter
