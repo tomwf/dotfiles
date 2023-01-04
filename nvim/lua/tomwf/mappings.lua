@@ -6,16 +6,16 @@ vim.g.mapleader = ' '
 bind('n', '<leader>dj', ':lua vim.diagnostic.goto_next()<CR>zz', opts)
 bind('n', '<leader>dk', ':lua vim.diagnostic.goto_prev()<CR>zz', opts)
 -- Git
-bind('n', '<leader>g', ':vertical Git<bar>%bd!<bar>b#<CR>')
-bind('n', '<leader>b', ':BlamerToggle<CR>')
-bind('n', '<leader>df', ':Gvdiff<CR>')
+bind('n', '<leader>g', ':vertical Git<bar>%bd!<bar>b#<CR>', opts)
+bind('n', '<leader>b', ':BlamerToggle<CR>', opts)
+bind('n', '<leader>df', ':Gvdiff<CR>', opts)
 -- Buffer
-bind('n', '<C-k>', ':bn|bd#<CR>')
-bind('n', '<C-l>', ':bn<CR>')
-bind('n', '<C-h>', ':bp<CR>')
-bind('n', '<CR>', ':b#<CR>')
+bind('n', '<C-k>', ':bn|bd#<CR>', opts)
+bind('n', '<C-l>', ':bn<CR>', opts)
+bind('n', '<C-h>', ':bp<CR>', opts)
+bind('n', '<CR>', ':b#<CR>', opts)
 -- Coc explorer
-bind('n', '<leader>e', ':CocCommand explorer<CR>')
+bind('n', '<leader>e', ':CocCommand explorer<CR>', opts)
 -- Overwrite default
 bind('n', '<C-j>', 'i<CR><Esc>')
 bind('!', '<C-j>', '<Down>')
