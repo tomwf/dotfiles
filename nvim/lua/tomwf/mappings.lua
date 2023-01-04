@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 -- Git
 keymap.set('n', '<leader>g', ':vertical Git<bar>%bd!<bar>b#<CR>')
 keymap.set('n', '<leader>b', ':BlamerToggle<CR>')
-keymap.set('n', '<leader>d', ':Gvdiff<CR>')
+keymap.set('n', '<leader>df', ':Gvdiff<CR>')
 -- Buffer
 keymap.set('n', '<C-k>', ':bn|bd#<CR>')
 keymap.set('n', '<C-l>', ':bn<CR>')
