@@ -1,9 +1,3 @@
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, opts)
-
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
