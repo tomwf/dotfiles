@@ -52,6 +52,8 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
+  -- Linters & formatters
+  use 'jose-elias-alvarez/null-ls.nvim'
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
