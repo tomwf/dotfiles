@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
   -- Superpowers
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
+  use 'tpope/vim-repeat'
   -- Git magic
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
