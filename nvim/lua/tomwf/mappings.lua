@@ -10,7 +10,7 @@ bind('n', '<leader>g', ':vertical Git<bar>%bd!<bar>b#<CR>', opts)
 bind('n', '<leader>b', ':BlamerToggle<CR>', opts)
 bind('n', '<leader>df', ':Gvdiff<CR>', opts)
 -- Buffer
-bind('n', '<C-k>', ':bn|bd#<CR>', opts)
+bind('n', '<C-k>', ':bp|bd#<CR>', opts)
 bind('n', '<C-l>', ':bn<CR>', opts)
 bind('n', '<C-h>', ':bp<CR>', opts)
 bind('n', '<CR>', ':b#<CR>', opts)
