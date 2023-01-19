@@ -12,7 +12,7 @@ set.smartcase = true
 -- Autoindent in new line
 set.smartindent = true
 -- Use indent as a fold
-set.foldmethod = 'indent'
+set.foldmethod = "indent"
 set.foldlevelstart = 99
 -- Disable hightlight
 set.hlsearch = false
