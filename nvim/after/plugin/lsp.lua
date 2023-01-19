@@ -6,10 +6,9 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
   local bind = vim.keymap.set
 
-  bind('n', 'gD', vim.lsp.buf.declaration, opts)
   bind('n', 'gd', vim.lsp.buf.definition, opts)
   bind('n', 'K', vim.lsp.buf.hover, opts)
   bind('n', '<leader>z', vim.lsp.buf.type_definition, opts)
