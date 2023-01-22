@@ -7,8 +7,11 @@ return require("packer").startup(function(use)
 	-- Syntax Highlight
 	use("folke/tokyonight.nvim")
 	-- Beautiful Statusline
-	use("vim-airline/vim-airline")
-	use("vim-airline/vim-airline-themes")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
 	-- Superpowers
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
