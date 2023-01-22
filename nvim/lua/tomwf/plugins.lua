@@ -5,7 +5,7 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 	-- Syntax Highlight
-	use("navarasu/onedark.nvim")
+	use("folke/tokyonight.nvim")
 	-- Beautiful Statusline
 	use("vim-airline/vim-airline")
 	use("vim-airline/vim-airline-themes")
