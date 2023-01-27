@@ -6,9 +6,6 @@ set.tabstop = 2
 -- Show hybrid line number
 set.number = true
 set.relativenumber = true
--- Ignore case smartly when searching
-set.ignorecase = true
-set.smartcase = true
 -- Autoindent in new line
 set.smartindent = true
 -- Use indent as a fold
