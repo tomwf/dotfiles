@@ -82,4 +82,11 @@ return require("packer").startup(function(use)
 			end, { expr = true })
 		end,
 	})
+	-- undotree
+	use({
+		"jiaoshijie/undotree",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 end)
