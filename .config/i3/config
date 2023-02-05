@@ -123,9 +123,9 @@ set $ws10 "10"
 # switch to workspace
 set $feh exec --no-startup-id feh --bg-fill
 bindsym $mod+ampersand workspace number $ws1 ; $feh ~/Pictures/wallpapers/raphtalia_1_1080p.png
-bindsym $mod+eacute workspace number $ws2 ; $feh ~/Pictures/wallpapers/miku_1.jpg
-bindsym $mod+quotedbl workspace number $ws3 ; $feh ~/Pictures/wallpapers/hanabi_1.jpg
-bindsym $mod+apostrophe workspace number $ws4 ; $feh ~/Pictures/wallpapers/sky_1.jpg
+bindsym $mod+eacute workspace number $ws2 ; $feh ~/Pictures/wallpapers/miku_2.jpg
+bindsym $mod+quotedbl workspace number $ws3 ; $feh ~/Pictures/wallpapers/berserk_1.jpg
+bindsym $mod+apostrophe workspace number $ws4 ; $feh ~/Pictures/wallpapers/sea_1.jpg
 bindsym $mod+parenleft workspace number $ws5 ; $feh ~/Pictures/wallpapers/sky_2.jpg
 bindsym $mod+section workspace number $ws6
 bindsym $mod+egrave workspace number $ws7
