@@ -216,3 +216,10 @@ client.urgent           #FF0000 #900000 #ffffff #900000   #FF0000
 client.placeholder      #3D1D13 #222222 #888888 #3D1D13   #3D1D13
 
 client.background       #ffffff
+
+# Remap keys
+# Swap Ctrl and Caps Lock keys
+exec --no-startup-id setxkbmap -rules evdev -model pc105 -layout fr -variant mac -option ctrl:swapcaps
+# Swap "<" and "@"
+exec --no-startup-id /bin/bash -c "sleep 1 && xmodmap -e 'keycode 49 = less greater less greater VoidSymbol VoidSymbol VoidSymbol'"
+exec --no-startup-id /bin/bash -c "sleep 1 && xmodmap -e 'keycode 94 = at numbersign at numbersign periodcentered Ydiaeresis periodcentered'"

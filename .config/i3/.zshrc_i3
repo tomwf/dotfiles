@@ -1,5 +1,0 @@
-# Swap Ctrl and Caps Lock keys
-setxkbmap -rules evdev -model pc105 -layout fr -variant mac -option ctrl:swapcaps
-# Swap "<" and "@"
-xmodmap -e "keycode  49 = less greater less greater VoidSymbol VoidSymbol VoidSymbol"
-xmodmap -e "keycode  94 = at numbersign at numbersign periodcentered Ydiaeresis periodcentered"
