@@ -199,7 +199,7 @@ bar {
 }
 
 # Lock screen
-bindsym $mod+e exec i3lock -i ~/Pictures/wallpapers/lockscreen.png
+bindsym $mod+ctrl+q exec i3lock -i ~/Pictures/wallpapers/lockscreen.png
 
 # Hide window title bar
 default_border pixel 1
