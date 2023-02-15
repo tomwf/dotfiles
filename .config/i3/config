@@ -202,7 +202,7 @@ bar {
 bindsym $mod+ctrl+q exec i3lock -i ~/Pictures/wallpapers/lockscreen.png
 
 # Hide window title bar
-default_border pixel 1
+default_border none
 
 # Disable focus on mouse hover
 focus_follows_mouse no
