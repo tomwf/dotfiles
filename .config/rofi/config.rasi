@@ -1,5 +1,0 @@
-configuration {
-	show-icons: true;
-	kb-cancel: "Escape,Control+c,Super+space";
-}
-@theme "/home/tomwf/.config/rofi/spotlight-dark.rasi"
