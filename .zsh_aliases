@@ -7,5 +7,3 @@ alias gc="git checkout"
 alias gp="git pull"
 alias gr="git rebase"
 alias gm="git merge"
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#c0caf5,bg=#33467C"
