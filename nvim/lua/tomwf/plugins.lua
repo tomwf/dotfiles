@@ -68,7 +68,7 @@ return require("packer").startup(function(use)
 	use({
 		"Exafunction/codeium.vim",
 		config = function()
-			vim.keymap.set("i", "<C-g>", function()
+			vim.keymap.set("i", "<C-f>", function()
 				return vim.fn["codeium#Accept"]()
 			end, { expr = true })
 			vim.keymap.set("i", "<C-j>", function()
