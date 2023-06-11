@@ -1,0 +1,13 @@
+# Insert your preferred key mappings here.
+map <c-f> scrollFullPageDown
+map <c-b> scrollFullPageUp
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+map <c-k> removeTab
+unmap x
+map u restoreTab
+map <c-l> nextTab
+map <c-h> previousTab
+map <c-o> goBack
+map <c-i> goForward
+map F LinkHints.activateModeToOpenInNewForegroundTab
