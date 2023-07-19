@@ -1,4 +1,5 @@
 *.swp
 .luarc.json
+work/
 venv/
 .DS_Store
