@@ -1,0 +1,42 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+" the same commands as the original vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+source ~/.vimrc
+
+set incsearch
+set clipboard+=unnamed
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+" Navigation
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+" Tab
+nmap <C-h> :tabprevious<CR>
+nmap <C-l> :tabnext<CR>
+nmap <C-k> :bd<CR>
+" Search
+nmap <Space>fh <Action>(Find)
+nmap «Space>ff <Action>(FindInPath)
+nmap <Space>fd <Action>(SearchEverywhere)
+" Diagnostics
+nmар <Space>dj <Action>(GotoNextError)
+nmap <Space>dk <Action>(GotoPrevioUsError)
+nmap <Space>tb <Action>(ToggleLineBreakpoint)
+nmap <Space>db <Action>(Debug)
+" Git
+nmap <Space>df <Action>(Vcs.ShowDiffChangedLines)
+" Page jump
+nmap <C-f> <C-f>M
+nmap <C-b> <C-b>M
+nmap <C-U> <C-U>M
+nmap <C-d> <C-d>M
+" Reformat code
+nmap <Space>rf <Action>(ReformatCode)
+" Git
+nmap <Space>g <Action>(CheckinProject)
