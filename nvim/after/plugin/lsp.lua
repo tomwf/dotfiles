@@ -1,9 +1,4 @@
 local lsp = require("lsp-zero")
-lsp.preset("recommended")
-
-lsp.set_preferences({
-	set_lsp_keymaps = false,
-})
 
 lsp.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
@@ -19,4 +14,10 @@ lsp.on_attach(function(client, bufnr)
 	end, opts)
 end)
 
-lsp.setup()
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {},
+  handlers = {
+    lsp.default_setup,
+  },
+})
