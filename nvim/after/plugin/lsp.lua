@@ -19,7 +19,4 @@ lsp.on_attach(function(client, bufnr)
 	end, opts)
 end)
 
--- Configure lua language server for neovim
-lsp.nvim_workspace()
-
 lsp.setup()
