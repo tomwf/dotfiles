@@ -32,6 +32,16 @@ require("lazy").setup({
   {"APZelos/blamer.nvim"},
   -- Coc is love
   { "neoclide/coc.nvim", branch = "release" },
+  -- Explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
   -- Time Tracking
   {"wakatime/vim-wakatime"},
   -- Tree sitter

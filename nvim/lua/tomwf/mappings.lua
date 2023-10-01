@@ -14,8 +14,8 @@ bind("n", "<C-k>", ":bp|bd#<CR>", opts)
 bind("n", "<C-l>", ":bn<CR>", opts)
 bind("n", "<C-h>", ":bp<CR>", opts)
 bind("n", "<CR>", ":b#<CR>", opts)
--- Coc explorer
-bind("n", "<leader>e", ":CocCommand explorer --preset floating<CR>", opts)
+-- Explorer
+bind("n", "<leader>e", ":Neotree float reveal toggle<CR>", opts)
 -- Overwrite default
 bind("n", "<C-j>", "i<CR><Esc>")
 bind("!", "<C-j>", "<Down>")
