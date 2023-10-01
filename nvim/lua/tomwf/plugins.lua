@@ -26,7 +26,7 @@ require("lazy").setup({
   { "tpope/vim-repeat" },
   -- Git magic
   { "tpope/vim-fugitive" },
-  { "airblade/vim-gitgutter" },
+  { "lewis6991/gitsigns.nvim" },
   { "APZelos/blamer.nvim" },
   -- Explorer
   {
