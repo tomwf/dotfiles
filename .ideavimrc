@@ -24,6 +24,7 @@ nmap <C-k> :bd<CR>
 nmap <Space>fh <Action>(Find)
 nmap «Space>ff <Action>(FindInPath)
 nmap <Space>fd <Action>(SearchEverywhere)
+nmap <Space>fo <Action>(GotoFile)
 " Diagnostics
 nmар <Space>dj <Action>(GotoNextError)
 nmap <Space>dk <Action>(GotoPrevioUsError)
@@ -31,6 +32,7 @@ nmap <Space>tb <Action>(ToggleLineBreakpoint)
 nmap <Space>db <Action>(Debug)
 " Git
 nmap <Space>df <Action>(Vcs.ShowDiffChangedLines)
+nmap <Space>g <Action>(CheckinProject)
 " Page jump
 nmap <C-f> <C-f>M
 nmap <C-b> <C-b>M
@@ -38,5 +40,5 @@ nmap <C-U> <C-U>M
 nmap <C-d> <C-d>M
 " Reformat code
 nmap <Space>rf <Action>(ReformatCode)
-" Git
-nmap <Space>g <Action>(CheckinProject)
+" Lsp
+nmap gr <Action>(GotoDeclaration)
