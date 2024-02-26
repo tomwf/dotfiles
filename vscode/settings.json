@@ -1,0 +1,145 @@
+{
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    /*************************************************/
+    /****************** Diagnostic *******************/
+    /*************************************************/
+    {
+      "before": ["<leader>", "d", "j"],
+      "commands": ["editor.action.marker.next"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "d", "k"],
+      "commands": ["editor.action.marker.prev"],
+      "silent": true
+    },
+    /*************************************************/
+    /********************** Git **********************/
+    /*************************************************/
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["gitblame.commitUrl"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "g", "j"],
+      "commands": ["workbench.action.editor.nextChange"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "g", "k"],
+      "commands": ["workbench.action.editor.previousChange"],
+      "silent": true
+    },
+    /*************************************************/
+    /**************** Better defaults ****************/
+    /*************************************************/
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showDefinitionPreviewHover"],
+      "silent": true
+    },
+    {
+      "before": ["<C-c>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["linebreakinsert"],
+      "silent": true
+    },
+    {
+      "before": ["<C-o>"],
+      "commands": ["workbench.action.navigateBack"],
+      "silent": true
+    },
+    {
+      "before": ["<C-i>"],
+      "commands": ["workbench.action.navigateForward"],
+      "silent": true
+    },
+    /*************************************************/
+    /******************** Search *********************/
+    /*************************************************/
+    {
+      "before": ["<leader>", "f", "h"],
+      "commands": ["actions.find"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.findInFiles"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "f", "o"],
+      "commands": ["workbench.action.quickOpen"],
+      "silent": true
+    },
+    /*************************************************/
+    /***************** Toggle panels *****************/
+    /*************************************************/
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"],
+      "silent": true
+    },
+    /*************************************************/
+    /****************** Tab actions ******************/
+    /*************************************************/
+    {
+      "before": ["<C-h>"],
+      "commands": [":bp"],
+      "silent": true
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": [":bn"],
+      "silent": true
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.closeActiveEditor"],
+      "silent": true
+    },
+    /*************************************************/
+    /***************** Center cursor *****************/
+    /*************************************************/
+    {
+      "before": ["<C-f>"],
+      "after": ["<C-f>", "M", "z", "z"]
+    },
+    {
+      "before": ["<C-b>"],
+      "after": ["<C-b>", "M", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    }
+  ],
+  "vim.leader": "<space>",
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
+}
