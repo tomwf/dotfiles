@@ -72,7 +72,15 @@ require("lazy").setup({
 		tag = "0.1.3",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-
+	-- Hightlight yank
+	{
+		"gbprod/yanky.nvim",
+		opts = {
+			highlight = {
+				timer = 200,
+			},
+		},
+	},
 	-- AI autocompletion
 	{
 		"Exafunction/codeium.vim",
