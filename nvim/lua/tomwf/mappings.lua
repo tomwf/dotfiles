@@ -6,9 +6,11 @@ vim.g.mapleader = " "
 bind("n", "<leader>dj", ":lua vim.diagnostic.goto_next()<CR>zz", opts)
 bind("n", "<leader>dk", ":lua vim.diagnostic.goto_prev()<CR>zz", opts)
 -- Git
-bind("n", "<leader>g", ":vertical Git<bar>%bd!<bar>b#<CR>", opts)
-bind("n", "<leader>b", ":BlamerToggle<CR>", opts)
-bind("n", "<leader>df", ":Gvdiff<CR>", opts)
+bind("n", "<leader>gg", ":vertical Git<bar>%bd!<bar>b#<CR>", opts)
+bind("n", "<leader>gb", ":BlamerToggle<CR>", opts)
+bind("n", "<leader>gj", ":lua require('gitsigns').nav_hunk('next')<CR>zz", opts)
+bind("n", "<leader>gk", ":lua require('gitsigns').nav_hunk('prev')<CR>zz", opts)
+bind("n", "<leader>gd", ":Gvdiff<CR>", opts)
 -- Buffer
 bind("n", "<C-k>", ":bp|bd#<CR>", opts)
 bind("n", "<C-l>", ":bn<CR>", opts)
