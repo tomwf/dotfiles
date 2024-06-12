@@ -14,3 +14,5 @@ set.foldlevelstart = 99
 -- Disable hightlight
 set.hlsearch = false
 set.incsearch = true
+-- Yank to clipboard
+set.clipboard = "unnamed"
