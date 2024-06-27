@@ -12,7 +12,9 @@ require("telescope").setup({
 			i = {
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
-				["<C-f>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<C-v>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<C-f>"] = actions.results_scrolling_down,
+				["<C-b>"] = actions.results_scrolling_up,
 			},
 		},
 	},
