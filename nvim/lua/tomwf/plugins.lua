@@ -33,6 +33,7 @@ require("lazy").setup({
 	{ "tpope/vim-fugitive" },
 	{ "lewis6991/gitsigns.nvim" },
 	{ "APZelos/blamer.nvim" },
+	{ "sindrets/diffview.nvim" },
 	-- Explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",

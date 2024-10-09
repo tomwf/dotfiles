@@ -11,6 +11,8 @@ bind("n", "<leader>gb", ":BlamerToggle<CR>", opts)
 bind("n", "<leader>gj", ":lua require('gitsigns').nav_hunk('next')<CR>zz", opts)
 bind("n", "<leader>gk", ":lua require('gitsigns').nav_hunk('prev')<CR>zz", opts)
 bind("n", "<leader>gd", ":Gvdiff<CR>", opts)
+bind("n", "<leader>gh", ":DiffviewFileHistory<CR>", opts)
+bind("n", "<leader>gf", ":DiffviewFileHistory %<CR>", opts)
 -- Buffer
 bind("n", "<C-k>", ":bp|bd#<CR>", opts)
 bind("n", "<C-l>", ":bn<CR>", opts)
