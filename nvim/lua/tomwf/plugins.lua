@@ -15,7 +15,12 @@ require("lazy").setup({
 	-- Syntax Highlight
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- Beautiful Statusline
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		after = "catppuccin",
+	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
