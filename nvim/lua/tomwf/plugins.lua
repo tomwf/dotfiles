@@ -16,10 +16,12 @@ require("lazy").setup({
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- Beautiful Statusline
 	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		after = "catppuccin",
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+		},
+		version = "^1.0.0", -- optional: only update when a new 1.x version is released
 	},
 	{
 		"nvim-lualine/lualine.nvim",
