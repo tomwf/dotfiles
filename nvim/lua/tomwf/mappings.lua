@@ -15,8 +15,8 @@ bind("n", "<leader>gh", ":DiffviewFileHistory<CR>", opts)
 bind("n", "<leader>gf", ":DiffviewFileHistory %<CR>", opts)
 -- Buffer
 bind("n", "<C-k>", ":bp|bd#<CR>", opts)
-bind("n", "<C-l>", ":bn<CR>", opts)
-bind("n", "<C-h>", ":bp<CR>", opts)
+bind("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
+bind("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
 bind("n", "<CR>", ":b#<CR>", opts)
 -- Explorer
 bind("n", "<leader>e", ":Neotree float reveal toggle<CR>", opts)
