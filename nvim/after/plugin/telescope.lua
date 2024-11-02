@@ -6,8 +6,9 @@ vim.keymap.set("n", "<leader>fb", builtin.git_branches, {})
 vim.keymap.set("n", "<leader>fd", builtin.lsp_document_symbols, {})
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {})
 vim.keymap.set("n", "<leader>fa", builtin.lsp_workspace_symbols, {})
-vim.keymap.set("n", "<leader>fe", builtin.diagnostics, {})
+vim.keymap.set("n", "<leader>fw", builtin.diagnostics, {})
 vim.keymap.set("n", "<leader>fs", builtin.git_status, {})
+vim.keymap.set("n", "<leader>fe", "<Cmd>Telescope emoji<CR>", {})
 
 local actions = require("telescope.actions")
 require("telescope").setup({
@@ -23,3 +24,5 @@ require("telescope").setup({
 		},
 	},
 })
+
+require("telescope").load_extension("emoji")

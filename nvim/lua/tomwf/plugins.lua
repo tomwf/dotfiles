@@ -78,6 +78,7 @@ require("lazy").setup({
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	{ "xiyaowong/telescope-emoji.nvim" },
 	-- AI autocompletion
 	{
 		"Exafunction/codeium.vim",
