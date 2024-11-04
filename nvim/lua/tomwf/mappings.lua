@@ -15,6 +15,7 @@ bind("n", "<leader>gd", ":Gvdiff<CR>", opts)
 bind("n", "<leader>gh", ":DiffviewFileHistory<CR>", opts)
 bind("n", "<leader>gf", ":DiffviewFileHistory %<CR>", opts)
 -- Buffer
+bind("n", "<C-j>", "<Cmd>BufferMoveStart<CR>", opts)
 bind("n", "<C-k>", ":bp|bd#<CR>", opts)
 bind("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
 bind("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
@@ -22,7 +23,6 @@ bind("n", "<CR>", ":b#<CR>", opts)
 -- Explorer
 bind("n", "<leader>e", ":Neotree float reveal toggle<CR>", opts)
 -- Overwrite default
-bind("n", "<C-j>", "i<CR><Esc>")
 bind("!", "<C-j>", "<Down>")
 bind("!", "<C-k>", "<Up>")
 bind("!", "<C-c>", "<Esc>")
