@@ -3,25 +3,25 @@ local opts = { noremap = true, silent = true }
 -- Leader key
 vim.g.mapleader = " "
 -- Diagnostic
-bind("n", "<leader>dj", ":lua vim.diagnostic.goto_next()<CR>zz", opts)
-bind("n", "<leader>dk", ":lua vim.diagnostic.goto_prev()<CR>zz", opts)
+bind("n", "<leader>dj", "<Cmd>lua vim.diagnostic.goto_next()<CR>zz", opts)
+bind("n", "<leader>dk", "<Cmd>lua vim.diagnostic.goto_prev()<CR>zz", opts)
 bind("n", "<leader>dd", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- Git
-bind("n", "<leader>gg", ":vertical Git<bar>%bd!<bar>b#<CR>", opts)
-bind("n", "<leader>gb", ":BlamerToggle<CR>", opts)
-bind("n", "<leader>gj", ":lua require('gitsigns').nav_hunk('next')<CR>zz", opts)
-bind("n", "<leader>gk", ":lua require('gitsigns').nav_hunk('prev')<CR>zz", opts)
-bind("n", "<leader>gd", ":Gvdiff<CR>", opts)
-bind("n", "<leader>gh", ":DiffviewFileHistory<CR>", opts)
-bind("n", "<leader>gf", ":DiffviewFileHistory %<CR>", opts)
+bind("n", "<leader>gg", "<Cmd>vertical Git<bar>%bd!<bar>b#<CR>", opts)
+bind("n", "<leader>gb", "<Cmd>BlamerToggle<CR>", opts)
+bind("n", "<leader>gj", "<Cmd>lua require('gitsigns').nav_hunk('next')<CR>zz", opts)
+bind("n", "<leader>gk", "<Cmd>lua require('gitsigns').nav_hunk('prev')<CR>zz", opts)
+bind("n", "<leader>gd", "<Cmd>Gvdiff<CR>", opts)
+bind("n", "<leader>gh", "<Cmd>DiffviewFileHistory<CR>", opts)
+bind("n", "<leader>gf", "<Cmd>DiffviewFileHistory %<CR>", opts)
 -- Buffer
 bind("n", "<C-j>", "<Cmd>BufferMoveStart<CR>", opts)
-bind("n", "<C-k>", ":bp|bd#<CR>", opts)
+bind("n", "<C-k>", "<Cmd>bp|bd#<CR>", opts)
 bind("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
 bind("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
-bind("n", "<CR>", ":b#<CR>", opts)
+bind("n", "<CR>", "<Cmd>b#<CR>", opts)
 -- Explorer
-bind("n", "<leader>e", ":Neotree float reveal toggle<CR>", opts)
+bind("n", "<leader>e", "<Cmd>Neotree float reveal toggle<CR>", opts)
 -- Overwrite default
 bind("!", "<C-j>", "<Down>")
 bind("!", "<C-k>", "<Up>")
