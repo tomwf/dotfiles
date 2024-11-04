@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 -- Diagnostic
 bind("n", "<leader>dj", ":lua vim.diagnostic.goto_next()<CR>zz", opts)
 bind("n", "<leader>dk", ":lua vim.diagnostic.goto_prev()<CR>zz", opts)
+bind("n", "<leader>dd", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- Git
 bind("n", "<leader>gg", ":vertical Git<bar>%bd!<bar>b#<CR>", opts)
 bind("n", "<leader>gb", ":BlamerToggle<CR>", opts)
