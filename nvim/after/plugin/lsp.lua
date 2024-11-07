@@ -10,7 +10,7 @@ lsp.on_attach(function(client, bufnr)
 	bind("n", "<leader>ra", vim.lsp.buf.code_action, opts)
 end)
 
-require("mason").setup({})
+require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
 	handlers = {

@@ -97,4 +97,9 @@ require("lazy").setup({
 			end, { expr = true })
 		end,
 	},
+	-- Debugger
+	{
+		"mfussenegger/nvim-dap",
+		"jay-babu/mason-nvim-dap.nvim",
+	},
 })
