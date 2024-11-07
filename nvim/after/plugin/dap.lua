@@ -73,4 +73,17 @@ dap.configurations.typescript = {
 		console = "integratedTerminal",
 		internalConsoleOptions = "neverOpen",
 	},
+	{
+		name = "Launch NestJS tests",
+		type = "pwa-node",
+		request = "launch",
+		runtimeExecutable = "npm",
+		runtimeArgs = { "run", "test" },
+		cwd = "${workspaceFolder}",
+		sourceMaps = true,
+		protocol = "inspector",
+		outFiles = { "${workspaceFolder}/dist/**/*.js" },
+		console = "integratedTerminal",
+		internalConsoleOptions = "neverOpen",
+	},
 }
