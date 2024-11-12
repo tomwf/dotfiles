@@ -8,7 +8,7 @@ bind("n", "<leader>dk", "<Cmd>lua vim.diagnostic.goto_prev()<CR>zz", opts)
 bind("n", "<leader>dd", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 -- Git
 bind("n", "<leader>gg", "<Cmd>vertical Git<bar>%bd!<bar>b#<CR>", opts)
-bind("n", "<leader>gb", "<Cmd>BlamerToggle<CR>", opts)
+bind("n", "<leader>gw", "<Cmd>BlamerToggle<CR>", opts)
 bind("n", "<leader>gj", "<Cmd>lua require('gitsigns').nav_hunk('next')<CR>zz", opts)
 bind("n", "<leader>gk", "<Cmd>lua require('gitsigns').nav_hunk('prev')<CR>zz", opts)
 bind("n", "<leader>gd", "<Cmd>Gvdiff<CR>", opts)
