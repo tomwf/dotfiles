@@ -1,7 +1,7 @@
 local builtin = require("telescope.builtin")
 -- Files
 vim.keymap.set("n", "<leader>fo", builtin.find_files, {})
-vim.keymap.set("n", "<leader>ff", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>ff", "<Cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
 -- Vim
 vim.keymap.set("n", "<leader>fh", builtin.current_buffer_fuzzy_find, {})
@@ -23,8 +23,10 @@ vim.keymap.set("n", "<leader>ft", builtin.treesitter, {})
 -- Emoji
 vim.keymap.set("n", "<leader>fe", "<Cmd>Telescope emoji<CR>", {})
 
+local telescope = require("telescope")
 local actions = require("telescope.actions")
-require("telescope").setup({
+
+telescope.setup({
 	defaults = {
 		mappings = {
 			i = {
@@ -38,4 +40,5 @@ require("telescope").setup({
 	},
 })
 
-require("telescope").load_extension("emoji")
+telescope.load_extension("emoji")
+telescope.load_extension("live_grep_args")
