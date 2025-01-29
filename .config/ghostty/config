@@ -1,0 +1,12 @@
+# Catppuccin theme
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# Hide title bar
+macos-titlebar-style = hidden
+
+# Block style cursor
+shell-integration-features = no-cursor
+cursor-style = block
+
+# Transparent background
+background-opacity = 0.9
