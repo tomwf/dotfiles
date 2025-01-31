@@ -76,14 +76,12 @@ require("lazy").setup({
 	{ "xiyaowong/telescope-emoji.nvim" },
 	-- Startup
 	{
-		"startup-nvim/startup.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-file-browser.nvim",
-		},
+		"goolord/alpha-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("startup").setup({ theme = "kirby" })
+			local startify = require("alpha.themes.kirby")
+			startify.file_icons.provider = "devicons"
+			require("alpha").setup(startify.config)
 		end,
 	},
 	-- AI autocompletion
