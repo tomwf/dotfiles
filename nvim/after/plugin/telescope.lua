@@ -22,6 +22,8 @@ vim.keymap.set("n", "<leader>gf", builtin.git_bcommits, {})
 vim.keymap.set("n", "<leader>ft", builtin.treesitter, {})
 -- Emoji
 vim.keymap.set("n", "<leader>fe", "<Cmd>Telescope emoji<CR>", {})
+-- File Browser
+vim.keymap.set("n", "<leader>e", "<Cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>")
 
 local telescope = require("telescope")
 local actions = require("telescope.actions")

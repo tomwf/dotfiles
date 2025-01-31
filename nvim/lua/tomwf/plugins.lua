@@ -36,16 +36,6 @@ require("lazy").setup({
 	{ "lewis6991/gitsigns.nvim" },
 	{ "APZelos/blamer.nvim" },
 	{ "sindrets/diffview.nvim" },
-	-- Explorer
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	},
 	-- Time Tracking
 	{ "wakatime/vim-wakatime" },
 	-- Tree sitter
@@ -79,6 +69,7 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-live-grep-args.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
 			version = "^1.0.0",
 		},
 	},

@@ -20,8 +20,6 @@ bind("n", "<C-k>", "<Cmd>bp|bd#<CR>", opts)
 bind("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
 bind("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
 bind("n", "<CR>", "<Cmd>b#<CR>", opts)
--- Explorer
-bind("n", "<leader>e", "<Cmd>Neotree float reveal toggle<CR>", opts)
 -- Overwrite default
 bind("!", "<C-j>", "<Down>")
 bind("!", "<C-k>", "<Up>")
