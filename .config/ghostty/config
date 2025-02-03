@@ -10,3 +10,7 @@ cursor-style = block
 
 # Transparent background
 background-opacity = 0.9
+
+# Close without confirmation
+confirm-close-surface = false
+
