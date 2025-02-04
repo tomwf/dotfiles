@@ -3,6 +3,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>fo", builtin.find_files, {})
 vim.keymap.set("n", "<leader>ff", "<Cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
+vim.keymap.set("n", "<leader>fl", builtin.oldfiles, {})
 -- Vim
 vim.keymap.set("n", "<leader>fh", builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
