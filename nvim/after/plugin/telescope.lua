@@ -38,6 +38,7 @@ telescope.setup({
 				["<C-v>"] = actions.send_selected_to_qflist + actions.open_qflist,
 				["<C-f>"] = actions.results_scrolling_down,
 				["<C-b>"] = actions.results_scrolling_up,
+				["<C-a>"] = actions.send_to_qflist + actions.open_qflist,
 			},
 		},
 	},
