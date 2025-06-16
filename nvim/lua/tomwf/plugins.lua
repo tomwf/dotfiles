@@ -59,7 +59,8 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "hrsh7th/cmp-cmdline" },
 	-- Snippets
-	{ "L3MON4D3/LuaSnip" },
+	{ "hrsh7th/cmp-vsnip" },
+	{ "hrsh7th/vim-vsnip" },
 	-- Linters & formatters
 	{ "stevearc/conform.nvim" },
 	-- Telescope
