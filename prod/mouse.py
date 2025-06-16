@@ -1,7 +1,10 @@
+import os
 import sys
+import threading
 import time
 from datetime import datetime
 
+import requests
 from pyautogui import FailSafeException, move
 
 
@@ -10,6 +13,8 @@ def main() -> None:
     duration = get_duration()
     try:
         print("Press Ctrl+C to stop")
+        thread = threading.Thread(target=ping, daemon=True)
+        thread.start()
         while True:
             if duration and has_time_elapsed(start_time, duration):
                 print(f"Stopped at {get_time()}")
@@ -40,6 +45,20 @@ def get_duration() -> int:
         raise ValueError
     print(f"Running for {duration} minutes")
     return duration * 60
+
+
+def alert() -> None:
+    os.system('say "No wifi"')
+
+
+def ping() -> None:
+    while True:
+        try:
+            requests.get("https://apple.com", timeout=3)
+        except:
+            alert()
+        finally:
+            time.sleep(5)
 
 
 def get_time() -> datetime:
