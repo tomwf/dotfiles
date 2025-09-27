@@ -1,5 +1,5 @@
 # Catppuccin theme
-theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:catppuccin-mocha.conf,light:catppuccin-latte.conf
 
 # Hide title bar
 macos-titlebar-style = hidden
