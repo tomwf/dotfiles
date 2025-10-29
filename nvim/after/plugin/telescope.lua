@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>e", "<Cmd>Telescope file_browser path=%:p:h select_
 
 local telescope = require("telescope")
 local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup({
 	defaults = {
@@ -42,7 +43,17 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		file_browser = {
+			mappings = {
+				["i"] = {
+					["<C-r>"] = fb_actions.rename,
+				},
+			},
+		},
+	},
 })
 
 telescope.load_extension("emoji")
 telescope.load_extension("live_grep_args")
+telescope.load_extension("file_browser")
