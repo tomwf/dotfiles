@@ -1,22 +1,22 @@
+import datetime
 import os
 import sys
 import threading
 import time
-from datetime import datetime
 
 import requests
 from pyautogui import FailSafeException, move
 
 
 def main() -> None:
-    start_time = time.time()
-    duration = get_duration()
     try:
         print("Press Ctrl+C to stop")
         thread = threading.Thread(target=ping, daemon=True)
         thread.start()
+        start_time = time.time()
+        duration = get_duration()
         while True:
-            if duration and has_time_elapsed(start_time, duration):
+            if has_time_elapsed(start_time, duration):
                 print(f"Stopped at {get_time()}")
                 break
             move_mouse()
@@ -33,13 +33,13 @@ def move_mouse() -> None:
     move(0, -50)
 
 
-def has_time_elapsed(start_time: float, duration: int) -> bool:
+def has_time_elapsed(start_time: float, duration: float) -> bool:
     return time.time() - start_time > duration
 
 
-def get_duration() -> int:
+def get_duration() -> float:
     if len(sys.argv) < 2:
-        return 0
+        return time_until_lunch_or_end_of_shift()
     duration = int(sys.argv[1])
     if not isinstance(duration, int):
         raise ValueError
@@ -61,8 +61,26 @@ def ping() -> None:
             time.sleep(5)
 
 
-def get_time() -> datetime:
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+def get_time() -> str:
+    return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+
+def time_until_lunch_or_end_of_shift() -> float:
+    def _is_morning_working_hours() -> bool:
+        return datetime.datetime.now().hour < 13
+
+    def _is_afternoon_working_hours() -> bool:
+        return datetime.datetime.now().hour < 22 and datetime.datetime.now().minute < 30
+
+    now = datetime.datetime.now()
+    duration = 0.0
+    if _is_morning_working_hours():
+        lunch_break_time = datetime.datetime.combine(now, datetime.time(13))
+        duration = (lunch_break_time - now).total_seconds()
+    elif _is_afternoon_working_hours():
+        work_end_time = datetime.datetime.combine(now, datetime.time(21, 10))
+        duration = (work_end_time - now).total_seconds()
+    return duration
 
 
 if __name__ == "__main__":
