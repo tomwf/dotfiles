@@ -66,20 +66,20 @@ def get_time() -> str:
 
 
 def time_until_lunch_or_end_of_shift() -> float:
-    def _is_morning_working_hours() -> bool:
-        return datetime.datetime.now().hour < 13
-
-    def _is_afternoon_working_hours() -> bool:
-        return datetime.datetime.now().hour < 19 and datetime.datetime.now().minute < 30
-
     now = datetime.datetime.now()
+    now_time = now.time()
+
+    lunch_break_time = datetime.time(13)
+    work_end_time = datetime.time(18, 30)
+
     duration = 0.0
-    if _is_morning_working_hours():
-        lunch_break_time = datetime.datetime.combine(now, datetime.time(13))
-        duration = (lunch_break_time - now).total_seconds()
-    elif _is_afternoon_working_hours():
-        work_end_time = datetime.datetime.combine(now, datetime.time(18, 30))
-        duration = (work_end_time - now).total_seconds()
+
+    if now_time < lunch_break_time:
+        lunch_break = datetime.datetime.combine(now, lunch_break_time)
+        duration = (lunch_break - now).total_seconds()
+    elif now_time < work_end_time:
+        work_end = datetime.datetime.combine(now, work_end_time)
+        duration = (work_end - now).total_seconds()
     return duration
 
 
