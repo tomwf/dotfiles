@@ -1,0 +1,17 @@
+toggle_tmux_theme() {
+  sed -i '' "s/set -g @catppuccin_flavor \"$1\"/set -g @catppuccin_flavor \"$2\"/" ~/.dotfiles/.tmux.conf
+}
+
+toggle_nvim_theme() {
+  sed -i '' "s/flavour = \"$1\"/flavour = \"$2\"/" ~/.config/nvim/after/plugin/catppuccin.lua
+}
+
+toggle_dark() {
+  toggle_tmux_theme "latte" "mocha"
+  toggle_nvim_theme "latte" "mocha"
+}
+
+toggle_light() {
+  toggle_tmux_theme "mocha" "latte"
+  toggle_nvim_theme "mocha" "latte"
+}
