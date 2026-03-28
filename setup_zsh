@@ -1,0 +1,3 @@
+echo "alias m=\"python ~/.dotfiles/prod/mouse.py\"" >> ~/.zshrc
+echo "source ~/.zsh_aliases" >> ~/.zshrc
+echo "source ~/.toggle_theme" >> ~/.zshrc
